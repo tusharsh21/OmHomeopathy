@@ -7,7 +7,7 @@ export function Layout() {
   const navItems = [
     { path: "/", icon: Home, label: "Home" },
     { path: "/services", icon: Stethoscope, label: "Services" },
-    { path: "/about", icon: User, label: "About Dr." },
+    { path: "/about", icon: User, label: "About Us" },
     { path: "/contact", icon: MapPin, label: "Visit Us" },
   ];
 

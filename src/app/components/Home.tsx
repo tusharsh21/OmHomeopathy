@@ -1,7 +1,11 @@
 import { Phone, Award, Users, Clock, MapPin, Star, Activity, BadgeCheck, ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
+import { getBaseAssetUrl } from "../utils/base-path";
 
 export function Home() {
+  const clinicExteriorImage = getBaseAssetUrl("clinic_exterior.jpg");
+  const clinicSignImage = getBaseAssetUrl("clinic_sign.jpg");
+
   const services = [
     { name: "Kidney Care", icon: "💎", desc: "Expert treatment for kidney stones and renal health." },
     { name: "Corona Recovery", icon: "🦠", desc: "Holistic support for post-viral recovery and immunity." },
@@ -71,7 +75,7 @@ export function Home() {
       <section className="relative min-h-[90vh] flex items-center pt-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/clinic_exterior.jpg" 
+            src={clinicExteriorImage}
             alt="Om Homeopathic Clinic Exterior" 
             className="w-full h-full object-cover opacity-45"
           />
@@ -332,7 +336,7 @@ export function Home() {
                 </a>
               </div>
               <div className="rounded-[40px] overflow-hidden shadow-2xl border-8 border-white">
-                <img src="/clinic_sign.jpg" alt="Clinic Store" className="w-full h-full object-cover" />
+                <img src={clinicSignImage} alt="Clinic Store" className="w-full h-full object-cover" />
               </div>
             </div>
           </motion.div>

@@ -1,8 +1,12 @@
 import { Award, GraduationCap, Heart, Users, Phone, CheckCircle2 } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { motion } from "motion/react";
+import { getBaseAssetUrl } from "../utils/base-path";
 
 export function About() {
+  const doctorImage = getBaseAssetUrl("doctor_real.jpg");
+  const clinicSignImage = getBaseAssetUrl("clinic_sign.jpg");
+
   return (
     <div className="pt-24 pb-20">
       <div className="container mx-auto px-6">
@@ -36,9 +40,10 @@ export function About() {
             >
               <div className="aspect-[3/4] rounded-[40px] overflow-hidden shadow-2xl">
                 <ImageWithFallback
-                  src="/doctor_real.jpg"
+                  src={doctorImage}
                   alt="Dr. Ravindar Kumar"
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
+                  style={{ transform: "rotate(-90deg) scale(1.42)" }}
                 />
               </div>
               <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-xl border border-border hidden md:block">
@@ -132,9 +137,9 @@ export function About() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="rounded-3xl overflow-hidden shadow-xl border-4 border-white"
+                className="-mx-12 w-[calc(100%+6rem)] overflow-hidden rounded-3xl border-4 border-white shadow-xl md:mx-0 md:w-full"
               >
-                <img src="/clinic_sign.jpg" alt="Om Homeopathic Clinic Sign" className="w-full h-full object-cover" />
+                <img src={clinicSignImage} alt="Om Homeopathic Clinic Sign" className="w-full h-full object-cover" />
               </motion.div>
             </div>
           </div>
@@ -170,7 +175,7 @@ export function About() {
                 className="inline-flex items-center gap-3 bg-primary text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20"
               >
                 <Phone className="size-5" />
-                Call to Book with Dr. Ravindar Kumar
+                Call to Book
               </a>
             </div>
           </div>
